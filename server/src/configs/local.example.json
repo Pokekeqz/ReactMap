@@ -60,7 +60,6 @@
         "password": "reactmap_paw",
         "database": "reactmap_db",
         "useFor": [
-          "session",
           "user"
         ]
       },
@@ -193,6 +192,11 @@
         "trialPeriodEligible": false,
         "roles": []
       },
+      "nestSubmissions": {
+        "enabled": true,
+        "trialPeriodEligible": false,
+        "roles": []
+      },
       "scanAreas": {
         "enabled": true,
         "trialPeriodEligible": false,
@@ -236,7 +240,7 @@
     }
   },
   "icons": {
-    "Read_More_Here": "https://github.com/WatWowMap/ReactMap/wiki/Icons-Configuration",
+    "Read_More_Here": "https://github.com/WatWowMap/ReactMap/wiki/06.-Icons-Configuration",
     "customizable": [
       "pokemon",
       "pokestop",

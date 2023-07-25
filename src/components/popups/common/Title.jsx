@@ -1,26 +1,26 @@
 import React from 'react'
-import { Typography } from '@material-ui/core'
+import { Typography } from '@mui/material'
 
 import { useStore } from '@hooks/useStore'
 
-export default function Title({ mainName, backup }) {
+export default function Title({ children, backup }) {
   const popups = useStore((state) => state.popups)
-  const setPopups = useStore((state) => state.setPopups)
 
-  const handleClick = () => {
-    setPopups({
-      ...popups,
-      names: !popups.names,
-    })
-  }
   return (
     <Typography
       variant="subtitle2"
       align="center"
       noWrap={popups.names}
-      onClick={handleClick}
+      onClick={() =>
+        useStore.setState((prev) => ({
+          popups: {
+            ...prev.popups,
+            names: !popups.names,
+          },
+        }))
+      }
     >
-      {mainName || backup}
+      {children || backup}
     </Typography>
   )
 }
